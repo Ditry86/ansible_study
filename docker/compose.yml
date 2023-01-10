@@ -1,0 +1,24 @@
+services:
+      
+  ubuntu:
+    #image: ubuntu:focal
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu
+    networks: 
+      my_net:
+        ipv4_address: 192.168.2.11
+    tty: true
+
+networks:
+
+
+  # The presence of these objects is sufficient to define them
+  my_net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 192.168.2.0/24
+         gateway: 192.168.2.254
+    
