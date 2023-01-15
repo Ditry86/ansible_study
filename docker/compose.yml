@@ -1,5 +1,13 @@
 services:
-      
+
+  centos7:
+    image: centos
+    container_name: centos7
+    networks: 
+      my_net:
+        ipv4_address: 192.168.2.10
+    tty: true
+
   ubuntu:
     #image: ubuntu:focal
     build: 
